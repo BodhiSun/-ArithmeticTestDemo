@@ -13,6 +13,11 @@ import android.util.Log;
  * 1) log(b,a) > d -> 复杂度为O(N^log(b,a)
  * 2) log(b,a) = d -> 复杂度为O(N^d * logN
  * 3) log(b,a) < d -> 复杂度为O(N^d)
+ *
+ *  工程中的综合排序算法：
+ *  一.1.如果数组长度很短(长度小于60) 会优先选择插排
+ *  二.1.如果数据类型是基础类型 优先选择快排
+ *     2.如果是引用类型 优先选择归并排序
  */
 public class SortUtil {
 
@@ -20,6 +25,7 @@ public class SortUtil {
     /**
      * 冒泡排序
      * 时间复杂度O(N^2)，额外空间复杂度O(1)
+     * 可以做到算法稳定性
      *
      * @param arr 待排序数组
      */
@@ -40,7 +46,7 @@ public class SortUtil {
     /**
      * 选择排序
      * 时间复杂度O(N^2)，额外空间复杂度O(1)
-     *
+     * 不可以做到算法稳定性
      * @param arr 待排序数组
      */
     public static void selectSort(Integer[] arr) {
@@ -61,7 +67,7 @@ public class SortUtil {
     /**
      * 插入排序
      * 时间复杂度O(N^2)，额外空间复杂度O(1)
-     *
+     * 可以做到算法稳定性
      * @param arr 待排序数组
      */
     public static void insertionSort(Integer[] arr) {
@@ -92,8 +98,8 @@ public class SortUtil {
 
     /**
      * 归并排序
-     * 时间复杂度O(N*logN)，额外空间复杂度O(N)
-     *
+     * 时间复杂度O(N*logN)，额外空间复杂度O(N) (注：额外空间复杂度可以变成0(1) 归并排序内部缓存法 了解即可)
+     * 可以做到算法稳定性
      * @param arr 待排序数组
      */
     public static void mergeSort(Integer[] arr) {
@@ -180,7 +186,7 @@ public class SortUtil {
     /**
      * 快速排序
      * 随机快排时间复杂度是长期期望值O(N*logN)，额外空间复杂度长期期望值O(logN) 空间浪费在记录划分点上了
-     *
+     * 不可以做到算法稳定性(注：可以做到算法稳定性“01 stable sort”了解即可)
      * @param arr 待排序数组
      */
     public static void quickSort(Integer[] arr) {
@@ -242,6 +248,77 @@ public class SortUtil {
     }
 
 
+    /**
+     * 堆排序 先将数组heapInsert构建成大根堆，然后将堆顶和最后一个数交换，然后heapSize-1 ，再然后heapify继续变成大根堆 依次下去。。。
+     * 在脑海中构建一个完全二叉树 如果一个节点角标是i 则它左子节点角标为2*i+1 右节点2*i+2 父节点(i-1)/2
+     * 时间复杂度O(N*logN) 建立大根堆时间复杂度为O(N)，额外空间复杂度O(1)
+     * 不可以做到算法稳定性
+     * @param arr
+     */
+    public static void heapSort(Integer[]arr){
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+
+        //依次把i 位置上的数加进来 使0~i之间的数形成大根堆
+        for (int i = 0; i < arr.length; i++) {
+            heapInsert(arr,i);
+        }
+
+        int heapSize=arr.length;
+        //然后将堆顶和最后一个数交换
+        swap(arr,0,--heapSize);
+        while (heapSize>0){
+            //heapify继续调整变成大根堆
+            heapify(arr,0,heapSize);
+            //继续将堆顶和最后一个数交换
+            swap(arr,0,--heapSize);
+        }
+
+    }
+
+    /**
+     * 堆排序
+     * heapInsert 建立大根堆 如果当前节点比它的父节点大 则和父节点交换，继续和新的父节点比较。。重复下去
+     * @param arr 原始数组
+     * @param i 加进来的数
+     */
+    private static void heapInsert(Integer[] arr, int i) {
+        while(arr[i]>arr[(i-1)/2]){
+            swap(arr,i,(i-1)/2);
+            i = (i-1)/2;
+        }
+    }
+
+    /**
+     * 堆排序
+     * heapify 如果当前堆中某一个节点i变小了,导致i应该往下边沉
+     * @param arr 原始数组
+     * @param i 变化的节点
+     * @param heapSize 数组中从0开始到任何一位置heapSize 某一段是堆
+     */
+    private static void heapify(Integer[] arr, int i,int heapSize) {
+       int left=i*2+1;
+       //左孩子的下标没越界还在堆上
+       while(left<heapSize){
+            //取左右两个孩子中的大的下标 left+1为右孩子  left+1<heapSize右孩子不越界
+           int largest = left+1<heapSize && arr[left+1]>arr[left]
+                   ?left+1
+                   :left;
+           //左右两个孩子最大的那个和当前待比较中的最大的
+           largest = arr[largest]>arr[i]?largest:i;
+
+           //如果最大的是待比较的自己 则不用下沉
+           if(largest==i){
+               break;
+           }
+
+           //一个值变小 并且孩子中有比它大的数 交换位置继续向下比较
+           swap(arr,largest,i);
+           i = largest;
+           left=i*2+1;
+       }
+    }
 
 
 

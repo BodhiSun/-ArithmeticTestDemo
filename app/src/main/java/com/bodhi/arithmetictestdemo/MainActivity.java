@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 //        testSelectionSort();
 //        testInsertionSort();
 //        testMergeSort();
-        testQuickSort();
+//        testQuickSort();
+        testHeapSort();
 
     }
 
@@ -84,7 +85,17 @@ public class MainActivity extends AppCompatActivity {
         SortUtil.quickSort(arr1);
         SortUtil.quickSort(arr2);
         SortUtil.quickSort(arr3);
-        Arrays.sort(arr1);
+
+        tv_sort_result.setText(Arrays.asList(arr1).toString()+"\n"+Arrays.asList(arr2).toString()+"\n"+Arrays.asList(arr3).toString()+"\n");
+    }
+
+    private void testHeapSort() {
+        Integer[] arr1=new Integer[]{93,26,101,1,66,101,35,303,13};
+        Integer[] arr2=new Integer[]{12};
+        Integer[] arr3=new Integer[]{93,26,101,7,11,66,101,35,303,101,1,5,2,7,11};
+        SortUtil.heapSort(arr1);
+        SortUtil.heapSort(arr2);
+        SortUtil.heapSort(arr3);
 
         tv_sort_result.setText(Arrays.asList(arr1).toString()+"\n"+Arrays.asList(arr2).toString()+"\n"+Arrays.asList(arr3).toString()+"\n");
 
