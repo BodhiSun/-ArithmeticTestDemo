@@ -1,13 +1,14 @@
 package com.bodhi.arithmetictestdemo;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.bodhi.arithmetictestdemo.bean.Student;
+
 import java.util.Arrays;
-import java.util.List;
+import java.util.PriorityQueue;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tv_sort_result;
@@ -23,11 +24,27 @@ public class MainActivity extends AppCompatActivity {
 //        testInsertionSort();
 //        testMergeSort();
 //        testQuickSort();
-        testHeapSort();
+//        testHeapSort();
+        testBucketSort();
+
+
+        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.N){
+            //系统自带的对结构
+            PriorityQueue<Student> heap = new PriorityQueue(new IdAscendingCompator());//优先级队列就是堆结构
+            Student student2 = new Student("小舞", 16, "女");
+            Student student = new Student("小三", 12, "男");
+            Student student3 = new Student("公子", 300, "男");
+            heap.add(student2);
+            heap.add(student);
+            heap.add(student3);
+
+            while (!heap.isEmpty()) {
+                Student poll = heap.poll();//poll方法每次弹出头部 堆大小减1
+                System.out.println(poll.toString());
+            }
+        }
 
     }
-
-
 
     private void testBubbleSort() {
         Integer[] arr1=new Integer[]{93,26,101,1,66,101,35,303,13};
@@ -96,6 +113,19 @@ public class MainActivity extends AppCompatActivity {
         SortUtil.heapSort(arr1);
         SortUtil.heapSort(arr2);
         SortUtil.heapSort(arr3);
+
+        tv_sort_result.setText(Arrays.asList(arr1).toString()+"\n"+Arrays.asList(arr2).toString()+"\n"+Arrays.asList(arr3).toString()+"\n");
+
+
+    }
+
+    private void testBucketSort() {
+        Integer[] arr1=new Integer[]{93,26,101,1,66,101,35,183,13};
+        Integer[] arr2=new Integer[]{12};
+        Integer[] arr3=new Integer[]{93,26,101,7,11,66,101,35,183,101,1,5,2,7,11};
+        SortUtil2.bucketSort(arr1);
+        SortUtil2.bucketSort(arr2);
+        SortUtil2.bucketSort(arr3);
 
         tv_sort_result.setText(Arrays.asList(arr1).toString()+"\n"+Arrays.asList(arr2).toString()+"\n"+Arrays.asList(arr3).toString()+"\n");
 
