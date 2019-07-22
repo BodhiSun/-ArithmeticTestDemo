@@ -19,6 +19,13 @@ import com.bodhi.arithmetictestdemo.practice.LinkListPractice_ReverseList.Node;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_ReverseList.DoubleNode;
 import com.bodhi.arithmetictestdemo.practice.MatrixPractice_ZigZagPrintMatrix;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_PrintCommonPart.CusNode;
+import com.bodhi.arithmetictestdemo.practice.Practice_PaperFolding;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_CompleteTreeNodeNumber;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBSTAndCBT;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBalancedTree;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_PreInPosTraversal;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_PrintBinaryTree;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_SerializeAndDeserialize;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -49,7 +56,16 @@ public class MainActivity extends AppCompatActivity {
 //        testLinkedListIsPalindrome();
 //        testLinkedSmallerEqualBigger();
 //        testLinkedCopyListWithRand();
-        testLinkedFindIntersectNode();
+//        testLinkedFindIntersectNode();
+//          testPreInPosTraversal();
+//        testPrintBinaryTree();
+//        testSerialAndReconsTree();
+
+//        testPaperFold();
+//        testIsBalancedTree();
+//        testIsBSTAndCBT();
+          testCompleteTreeNodeNum();
+
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
             //系统自带的对结构
@@ -67,6 +83,38 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void testCompleteTreeNodeNum() {
+        TreePractice_CompleteTreeNodeNumber.test();
+    }
+
+    private void testIsBSTAndCBT() {
+        TreePractice_IsBSTAndCBT.test();
+    }
+
+    private void testIsBalancedTree() {
+        TreePractice_IsBalancedTree.test();
+    }
+
+    private void testPaperFold() {
+        Practice_PaperFolding.printAllFolds(1);
+        System.out.println("=======================");
+        Practice_PaperFolding.printAllFolds(2);
+        System.out.println("=======================");
+        Practice_PaperFolding.printAllFolds(3);
+    }
+
+    private void testSerialAndReconsTree() {
+        TreePractice_SerializeAndDeserialize.test();
+    }
+
+    private void testPrintBinaryTree() {
+        TreePractice_PrintBinaryTree.test();
+    }
+
+    private void testPreInPosTraversal() {
+        TreePractice_PreInPosTraversal.test();
     }
 
     private void testLinkedFindIntersectNode() {
