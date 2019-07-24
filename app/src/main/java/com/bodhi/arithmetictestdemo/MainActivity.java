@@ -3,6 +3,7 @@ package com.bodhi.arithmetictestdemo;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.widget.TextView;
 
 import com.bodhi.arithmetictestdemo.bean.Student;
@@ -26,6 +27,7 @@ import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBalancedTree;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_PreInPosTraversal;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_PrintBinaryTree;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_SerializeAndDeserialize;
+import com.bodhi.arithmetictestdemo.practice.TreePractice_TrieTree;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -64,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
 //        testPaperFold();
 //        testIsBalancedTree();
 //        testIsBSTAndCBT();
-          testCompleteTreeNodeNum();
+//          testCompleteTreeNodeNum();
+          testTrieTree();
 
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
@@ -83,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void testTrieTree() {
+        TreePractice_TrieTree.test();
     }
 
     private void testCompleteTreeNodeNum() {
