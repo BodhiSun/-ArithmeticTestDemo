@@ -7,6 +7,8 @@ import android.util.SparseArray;
 import android.widget.TextView;
 
 import com.bodhi.arithmetictestdemo.bean.Student;
+import com.bodhi.arithmetictestdemo.practice.GreedyPractice_GoldBarLessCost;
+import com.bodhi.arithmetictestdemo.practice.GreedyPractice_LowestLexicography;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_CopyListWithRandom;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_FindFirstIntersectNode;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_PrintCommonPart;
@@ -67,8 +69,9 @@ public class MainActivity extends AppCompatActivity {
 //        testIsBalancedTree();
 //        testIsBSTAndCBT();
 //          testCompleteTreeNodeNum();
-          testTrieTree();
-
+//          testTrieTree();
+//          testLowestLexicography();
+            testGoldLessCost();
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
             //系统自带的对结构
@@ -86,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void testGoldLessCost() {
+        GreedyPractice_GoldBarLessCost.test();
+    }
+
+    private void testLowestLexicography() {
+        GreedyPractice_LowestLexicography.test();
     }
 
     private void testTrieTree() {
