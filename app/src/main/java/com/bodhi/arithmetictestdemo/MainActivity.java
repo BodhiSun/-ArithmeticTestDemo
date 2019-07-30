@@ -3,7 +3,6 @@ package com.bodhi.arithmetictestdemo;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.SparseArray;
 import android.widget.TextView;
 
 import com.bodhi.arithmetictestdemo.bean.Student;
@@ -30,6 +29,13 @@ import com.bodhi.arithmetictestdemo.practice.TreePractice_PreInPosTraversal;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_PrintBinaryTree;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_SerializeAndDeserialize;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_TrieTree;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursiveDP_AddToEqualAim;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursiveDP_MinPath;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursive_Cow;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursive_Factorial;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursive_Hanoi;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursive_PrintAllPermutation;
+import com.bodhi.arithmetictestdemo.practice.ViolenceRecursive_PrintAllSubsquence;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -71,7 +77,15 @@ public class MainActivity extends AppCompatActivity {
 //          testCompleteTreeNodeNum();
 //          testTrieTree();
 //          testLowestLexicography();
-            testGoldLessCost();
+//            testGoldLessCost();
+//            testViolenceRecursiveFactorial();
+//          testHanoi();
+//         testPrintAllSubsquence();
+//         testPrintAllPermutation();
+//            testCowNum();
+//            testMinPath();
+            testAddToEqual();
+
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
             //系统自带的对结构
@@ -89,6 +103,34 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private void testAddToEqual() {
+        ViolenceRecursiveDP_AddToEqualAim.test();
+    }
+
+    private void testMinPath() {
+        ViolenceRecursiveDP_MinPath.test();
+    }
+
+    private void testCowNum() {
+        ViolenceRecursive_Cow.test();
+    }
+
+    private void testPrintAllPermutation() {
+        ViolenceRecursive_PrintAllPermutation.test();
+    }
+
+    private void testPrintAllSubsquence() {
+        ViolenceRecursive_PrintAllSubsquence.test();
+    }
+
+    private void testHanoi() {
+        ViolenceRecursive_Hanoi.test();
+    }
+
+    private void testViolenceRecursiveFactorial() {
+        ViolenceRecursive_Factorial.test();
     }
 
     private void testGoldLessCost() {
