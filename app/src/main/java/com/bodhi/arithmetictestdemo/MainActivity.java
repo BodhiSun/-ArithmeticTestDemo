@@ -22,6 +22,7 @@ import com.bodhi.arithmetictestdemo.practice.LinkListPractice_ReverseList.Double
 import com.bodhi.arithmetictestdemo.practice.MatrixPractice_ZigZagPrintMatrix;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_PrintCommonPart.CusNode;
 import com.bodhi.arithmetictestdemo.practice.Practice_PaperFolding;
+import com.bodhi.arithmetictestdemo.practice.Recursion_FindArrayMaxNum;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_CompleteTreeNodeNumber;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBSTAndCBT;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBalancedTree;
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
 //        testBubbleSort();
 //        testSelectionSort();
 //        testInsertionSort();
+//        SortUtil.logarithmicTest();
+        Recursion_FindArrayMaxNum.test();
+
 //        testMergeSort();
 //        testQuickSort();
 //        testHeapSort();
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 //         testPrintAllPermutation();
 //            testCowNum();
 //            testMinPath();
-            testAddToEqual();
+//            testAddToEqual();
 
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {

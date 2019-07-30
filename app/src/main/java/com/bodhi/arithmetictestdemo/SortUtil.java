@@ -2,30 +2,53 @@ package com.bodhi.arithmetictestdemo;
 
 import android.util.Log;
 
+import java.util.Arrays;
+
 /**
  * @author : Sun
  * @version : 1.0
  * create time : 2019/7/12 15:34
- * desc :
- * <p>
- * 递归行为和递归行为时间复杂度 master公式的使用
+ * desc :基于比较的排序
+ *
+ * 对数器的作用：
+ * 1.验证一个方法a是否正确
+ * 2.验证贪心策略是否正确
+ * 对数器使用步骤：
+ * 1.实现一个随机样本产生器
+ * 2.实现一个绝对正确但是复杂度不好的方法b，也可以用系统提供的方法
+ * 3.实现比对的方法 进行大样本测试比对
+ * 4.如果有一个样本使得比对出错，打印样本并调试分析哪个方法出错
+ * 5.当样本数量很多比对测试依然正确，可以确定要验证的方法已经正确
+ * 应用：最好准备一个随机样本发生器的模板 二叉树、数组
+ *
+ *
+ * 递归行为时间复杂度 master公式:
  * T(N) = a*T(N/b) + O(N^d)
- * 1) log(b,a) > d -> 复杂度为O(N^log(b,a)
- * 2) log(b,a) = d -> 复杂度为O(N^d * logN
+ * 1) log(b,a) > d -> 复杂度为O(N^log(b,a))
+ * 2) log(b,a) = d -> 复杂度为O(N^d * logN)
  * 3) log(b,a) < d -> 复杂度为O(N^d)
+ *
  *
  *  工程中的综合排序算法：
  *  一.1.如果数组长度很短(长度小于60) 会优先选择插排
  *  二.1.如果数据类型是基础类型 优先选择快排
  *     2.如果是引用类型 优先选择归并排序
+ *
  */
 public class SortUtil {
 
 
     /**
      * 冒泡排序
-     * 时间复杂度O(N^2)，额外空间复杂度O(1)
+     * 时间复杂度：(N-1)+(N-2)+..+1 等差数列 S(n)=a*n^2+b*n+1
+     * 根据规则 不要低阶项，只要高阶项，忽略常数和系数 简化后为O(N^2)，
+     * 额外空间复杂度：O(1)
      * 可以做到算法稳定性
+     *
+     * 流程：
+     * 每次从0位置开始和后面的数依次比较 后面的数小就和前面的数交换 最后比较到末尾 找到最大的数排在末尾
+     * 下一次从0位置比较到n-2位置 找到第二大的数放在n-2位置，以此类推。
+     *
      *
      * @param arr 待排序数组
      */
@@ -43,10 +66,17 @@ public class SortUtil {
         }
     }
 
+
     /**
      * 选择排序
      * 时间复杂度O(N^2)，额外空间复杂度O(1)
      * 不可以做到算法稳定性
+     *
+     * 流程：
+     * 依次从0~N-1位置上找到一个最小的数 放到0位置
+     * 然后在1~N-1位置上找到第二小的数 放到1位置 以此类推
+     *
+     *
      * @param arr 待排序数组
      */
     public static void selectSort(Integer[] arr) {
@@ -66,47 +96,56 @@ public class SortUtil {
 
     /**
      * 插入排序
-     * 时间复杂度O(N^2)，额外空间复杂度O(1)
+     * 时间复杂度 因为插入排序的常数操作和数据状况有关 存在最好情况最差情况和平均情况 如整个数组是升序的
+     * 则为O(N) 整个数组是降序的则为0(N^2)，一个算法的时间复杂度当与数据状况有关时一律按最差的估计0(N^2)
+     * 额外空间复杂度O(1)
      * 可以做到算法稳定性
+     *
+     * 流程：
+     * 假如前面已经是排好序的数组 新插入进来的数和前面的数比较 如果比前面数小就和前面的数交换 否则不交换
+     *
      * @param arr 待排序数组
      */
     public static void insertionSort(Integer[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-
-        int num1 = 0;
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+                swap(arr, j, j + 1);
+            }
+        }
+    }
+    public static void insertionSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
         for (int i = 1; i < arr.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
-                num1++;
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
+                if ( arr[j + 1]<arr[j]) {
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-
-//        for (int i = 1; i < arr.length; i++) {
-//            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
-//                num1++;
-//                swap(arr, j, j + 1);
-//            }
-//        }
-        Log.e("num", "num1:" + num1);
-
     }
 
 
     /**
-     * 归并排序
+     * 归并排序-分治思想
      * 时间复杂度O(N*logN)，额外空间复杂度O(N) (注：额外空间复杂度可以变成0(1) 归并排序内部缓存法 了解即可)
      * 可以做到算法稳定性
      * @param arr 待排序数组
+     *
+     * 流程：先左侧部分排好序 然后右侧部分排好序 最后整体用外排的方式在辅助数组排好序 然后拷贝回原数组
+     *
      */
     public static void mergeSort(Integer[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-        mergeSort(arr, 0, arr.length - 1);
+        sortProcess(arr, 0, arr.length - 1);
     }
 
     /**
@@ -116,45 +155,45 @@ public class SortUtil {
      * @param l   数组左边起始位置
      * @param r   数组右边终止位置
      */
-    public static void mergeSort(Integer[] arr, int l, int r) {
-        //数组中只有1个数
+    public static void sortProcess(Integer[] arr, int l, int r) {
+        //子过程范围只有1个数 直接返回
         if (l == r) {
             return;
         }
 
         //这样防止求中间位置时越界 >>1右移一位相当于除2
         int mid = l + ((r - l) >> 1);
-        mergeSort(arr, l, mid);
-        mergeSort(arr, mid + 1, r);
-        mergeSort(arr, l, mid, r);
+        sortProcess(arr, l, mid);
+        sortProcess(arr, mid + 1, r);
+        merge(arr, l, mid, r);
     }
 
     /**
      * 归并排序
-     * 最终的左右两边子序列合在一起
+     * 最终的左右两边子序列合在一起排好序
      *
      * @param arr 待排序数组
-     * @param l   数组左边起始位置
+     * @param L   数组左边起始位置
      * @param m   数组中间位置
-     * @param r   数组右边终止位置
+     * @param R   数组右边终止位置
      *
      *  时间复杂度套进master公式的表示为：
      *   T(N)=2*T(N/2)+O(N^1)
      *   即a=2,b=2,d=1 满足log(b,a)=d
      *   所以归并排序时间复杂度为:0(N*LogN)
      */
-    public static void mergeSort(Integer[] arr, int l, int m, int r) {
-        //辅助数组
-        Integer[] help = new Integer[r - l + 1];
+    public static void merge(Integer[] arr, int L, int m, int R) {
+        //生成一个辅助数组
+        Integer[] help = new Integer[R - L + 1];
         //辅助数组角标起始位
         int i = 0;
         //左子序指针起始位
-        int p1 = l;
+        int p1 = L;
         //右子序指针起始位
         int p2 = m + 1;
 
         //左右子序的指针都没到末尾
-        while (p1 <= m && p2 <= r) {
+        while (p1 <= m && p2 <= R) {
             if(arr[p1]<arr[p2]){
                 //如果左子序小 就把左子序数据拿出来填充到help，同时左子序的指针移到到下一个
                 help[i]=arr[p1];
@@ -164,22 +203,21 @@ public class SortUtil {
                 p2++;
             }
             i++;
-
             //简化写法
 //            help[i++]=arr[p1]<arr[p2]?arr[p1++]:arr[p2++];
         }
-        //右子序指针先到末尾
+        //右子序指针先到末尾 把左子序直接拷贝到后面
         while (p1 <= m) {
             help[i++]=arr[p1++];
         }
-        //左子序指针先到末尾
-        while (p2 <= r) {
+        //左子序指针先到末尾 把右子序直接拷贝到后面
+        while (p2 <= R) {
             help[i++]=arr[p2++];
         }
 
         //将排序好的help数组 拷贝回待排序数组arr
         for (int j = 0; j < help.length; j++) {
-            arr[l+j]=help[j];
+            arr[L+j]=help[j];
         }
     }
 
@@ -187,6 +225,7 @@ public class SortUtil {
      * 快速排序
      * 随机快排时间复杂度是长期期望值O(N*logN)，额外空间复杂度长期期望值O(logN) 空间浪费在记录划分点上了
      * 不可以做到算法稳定性(注：可以做到算法稳定性“01 stable sort”了解即可)
+     *
      * @param arr 待排序数组
      */
     public static void quickSort(Integer[] arr) {
@@ -320,8 +359,15 @@ public class SortUtil {
        }
     }
 
-
-
+    public static void printArray(int[] arr) {
+        if (arr == null) {
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
 
     //不完全准确
     public static void swap2(Integer[] arr, int i, int j) {
@@ -335,4 +381,61 @@ public class SortUtil {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+
+//========================================对数器校验=================================
+
+    public static void logarithmicTest(){
+        //对数器测试插入排序写的是否正确
+        int testTime=50000;//大样本测试次数
+        int size=10;//随机生成的数组最大长度
+        int value=100;//数组内的值 -100~100
+        boolean succeed=true;
+
+        for (int i = 0; i < testTime; i++) {
+            int[] arr1 = generateRandomArray(size, value);
+            int[] arr2 = Arrays.copyOf(arr1,arr1.length);
+            int[] arr3 = Arrays.copyOf(arr1,arr1.length);
+
+            insertionSort(arr1);
+            absolutelyRightMethod(arr2);
+            boolean equals = Arrays.equals(arr1, arr2);
+            if (!equals) {
+                succeed=false;
+                printArray(arr3);
+                break;
+            }
+        }
+
+        System.out.println(succeed?"Nice!":"Fucking fucked!");
+
+//        int[] arr= new int[]{8,-54,20};
+    }
+
+
+    /**
+     * 实现一个随机样本产生器
+     * @param maxSize 数组最大长度
+     * @param maxValue 数组内最大值
+     * @return
+     */
+    public static int[] generateRandomArray(int maxSize,int maxValue){
+        //生成一个随机长度的数组
+        int[] arr=new int[(int) ((maxSize+1)*Math.random())];
+        for (int i = 0; i < arr.length; i++) {
+            //数组内每一个值也是随机的 即-maxValue 到 maxValue
+            arr[i]=(int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
+        }
+        return arr;
+    }
+
+    /**
+     * 绝对正确的排序方法
+     * @param arr 待排序数组
+     */
+    public static void absolutelyRightMethod(int[] arr){
+        Arrays.sort(arr);
+    }
+
+
 }
