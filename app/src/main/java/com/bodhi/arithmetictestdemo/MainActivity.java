@@ -21,8 +21,9 @@ import com.bodhi.arithmetictestdemo.practice.LinkListPractice_ReverseList.Node;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_ReverseList.DoubleNode;
 import com.bodhi.arithmetictestdemo.practice.MatrixPractice_ZigZagPrintMatrix;
 import com.bodhi.arithmetictestdemo.practice.LinkListPractice_PrintCommonPart.CusNode;
+import com.bodhi.arithmetictestdemo.practice.Practice_MaxGap;
 import com.bodhi.arithmetictestdemo.practice.Practice_PaperFolding;
-import com.bodhi.arithmetictestdemo.practice.Recursion_FindArrayMaxNum;
+import com.bodhi.arithmetictestdemo.practice.Practice_FindArrayMaxNum;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_CompleteTreeNodeNumber;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBSTAndCBT;
 import com.bodhi.arithmetictestdemo.practice.TreePractice_IsBalancedTree;
@@ -54,12 +55,13 @@ public class MainActivity extends AppCompatActivity {
 //        testSelectionSort();
 //        testInsertionSort();
 //        SortUtil.logarithmicTest();
-        Recursion_FindArrayMaxNum.test();
+//        Practice_FindArrayMaxNum.test();
 
 //        testMergeSort();
 //        testQuickSort();
 //        testHeapSort();
 //        testBucketSort();
+        Practice_MaxGap.test();
 
 //        testRotatePrintMatrix();
 //        testRotateMatrix();

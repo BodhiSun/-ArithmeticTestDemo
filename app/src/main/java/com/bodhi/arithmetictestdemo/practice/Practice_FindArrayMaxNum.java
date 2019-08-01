@@ -25,7 +25,7 @@ package com.bodhi.arithmetictestdemo.practice;
  *
  *
  */
-public class Recursion_FindArrayMaxNum {
+public class Practice_FindArrayMaxNum {
 
     /**
      * 时间复杂度：T(N)=2T(N/2)+O(1); a=2 b=2 d=0 符合master公式第一种情况 时间复杂度：O(N)

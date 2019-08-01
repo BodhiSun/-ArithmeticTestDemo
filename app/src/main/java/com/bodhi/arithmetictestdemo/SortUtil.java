@@ -226,6 +226,18 @@ public class SortUtil {
      * 随机快排时间复杂度是长期期望值O(N*logN)，额外空间复杂度长期期望值O(logN) 空间浪费在记录划分点上了
      * 不可以做到算法稳定性(注：可以做到算法稳定性“01 stable sort”了解即可)
      *
+     * 流程：
+     * 1.经典快排：把数组的最后位置数作为划分值 将整个数组分成小于等于区域和大于区域 然后小于等于区域放
+     * 左边 大于区域放右边 ，然后继续将左(减去末尾划分点的数)右两部分 分别按各自的最后一个数 继续划分成
+     * 两个区域以此递归 经典快排每次只搞定划分点的一个数
+     *
+     * 2.改进版-类似荷兰国旗的解法，将整个数组按最后一个数 划分成小于区域、等于区域、大于区域三部分 然后
+     * 等于区域不动 将小于区域和大于区域继续按最后末尾数划分三部分 以此类推递归下去 改进版每次搞定等于区
+     * 域一个区域的数 所以比经典快排快
+     *
+     * 3.改进版-随机快排 每次取数组中任意一个数 放到数组末尾作为划分值 使排序与样本顺序无关
+     *
+     *
      * @param arr 待排序数组
      */
     public static void quickSort(Integer[] arr) {
@@ -239,59 +251,64 @@ public class SortUtil {
      * 快速排序
      *
      * @param arr 待排序数组
-     * @param l   数组左边起始位置
-     * @param r   数组右边终止位置
+     * @param L   数组左边起始位置
+     * @param R   数组右边终止位置
      */
-    public static void quickSort(Integer[] arr, int l, int r) {
+    public static void quickSort(Integer[] arr, int L, int R) {
         //数组左边角标不超过右边时，过滤partition出现没有等于区域的无效位置
-        if (l < r) {
+        if (L < R) {
             //随机取数组中一个数作为因子放置数组末尾,这样算法与原始数据状况无关。加上这行由经典快排变为随机快排序
-            swap(arr,l+(int)(Math.random()*(r-l+1)),r);
+            swap(arr,L+(int)(Math.random()*(R-L+1)),R);
             //partition分块过程
-            Integer[] p =partition(arr,l,r);
+            Integer[] p =partition(arr,L,R);
             //L~等于区域前一个数位置，即小于区域继续递归排序
-            quickSort(arr,l,p[0]-1);
-            //等于区域后一个数位置~r，即大于区域继续递归排序
-            quickSort(arr,p[1]+1,r);
+            quickSort(arr,L,p[0]-1);
+            //等于区域后一个数位置~R，即大于区域继续递归排序
+            quickSort(arr,p[1]+1,R);
         }
     }
 
     /**
      * 注:经典快排是找到小于等于区域和大于区域，然后小于等于区域最后一个位置不动即找到的Num，两边区域的数继续递归，每次只排序一个数
-     *
      * 经典快速排序(改进后)partition过程是默认以最后一位(Num)做划分 小于区域放左边，大于区域放右边，返回中间等于区域
      * partition过程：当前待比较的数curr，小于Num区域下一个数less+1位置的数，给定的数Num
+     *
      * @param arr
-     * @param l
-     * @param r
+     * @param L
+     * @param R
      * @return
      */
-    public static Integer[] partition(Integer[] arr, int l, int r) {
-        int less =l-1;//默认0~less已经放的是小于Num的数了，所以初始小于等于Num的区域还不存在，即l的前一个位置为起始位
-        int more =r;//默认more~r已经放的是大于Num的数了，所以初始大于Num的区域还不存在，即r的位置为起始位
-        while (l<more){
+    public static Integer[] partition(Integer[] arr, int L, int R) {
+        int less =L-1;//默认0~less已经放的是小于Num的数了，所以初始小于等于Num的区域还不存在，即L的前一个位置为起始位
+        int more =R;//默认more~R已经放的是大于Num的数了，初始大于Num的区域包含了R位置的数，即R的位置为起始位
+        while (L<more){
             //当前数小于Num，当前数和小于区域下一个数交换，小于区域+1，当前数+1
-            if(arr[l]<arr[r]){
-                swap(arr,++less,l++);
-            }else if(arr[l]>arr[r]){
+            if(arr[L]<arr[R]){
+                swap(arr,++less,L++);
+            }else if(arr[L]>arr[R]){
                 //当前数大于Num，当前数和大于区域前一个数交换，大于区域-1，当前数不变继续比较
-                swap(arr,--more,l);
+                swap(arr,--more,L);
             }else{
                 //相等
-                l++;
+                L++;
             }
         }
-        //初始more包含了Num值，没参与比对，所以排序后交换到正确位置
-        swap(arr, more, r);
+        //初始大于区域more包含了Num值，没参与比对，所以排序后交换到正确位置(初始包含Num可以省一个变量)
+        swap(arr, more, R);
         return new Integer[] { less + 1, more };
     }
 
 
     /**
-     * 堆排序 先将数组heapInsert构建成大根堆，然后将堆顶和最后一个数交换，然后heapSize-1 ，再然后heapify继续变成大根堆 依次下去。。。
-     * 在脑海中构建一个完全二叉树 如果一个节点角标是i 则它左子节点角标为2*i+1 右节点2*i+2 父节点(i-1)/2
-     * 时间复杂度O(N*logN) 建立大根堆时间复杂度为O(N)，额外空间复杂度O(1)
+     * 堆排序
+     * 时间复杂度O(N*logN) 建立大根堆时间复杂度为Log1+Log2+...+Log(n-1)=O(N)，额外空间复杂度O(1)
      * 不可以做到算法稳定性
+     * 将数组在脑海中构建一个完全二叉树 如果一个节点角标是i 则它左子节点角标为2*i+1 右节点2*i+2 父节点(i-1)/2
+     *
+     * 流程：先将数组heapInsert构建成大根堆，然后将堆顶和最后一个数交换，再heapSize-1 ，再
+     * 通过heapify将0~heapSize-1继续调整成大根堆 在将堆顶弹出依次下去。。。 得到从小到大的排序
+     *
+     *
      * @param arr
      */
     public static void heapSort(Integer[]arr){
@@ -318,11 +335,13 @@ public class SortUtil {
 
     /**
      * 堆排序
-     * heapInsert 建立大根堆 如果当前节点比它的父节点大 则和父节点交换，继续和新的父节点比较。。重复下去
+     * heapInsert 如果已经形成大根堆 新加入一个节点 如果当前节点比它的父节点大 则和父节点交换，然后继续
+     * 和新的父节点比较。。重复下去 新城新的大根堆
      * @param arr 原始数组
      * @param i 加进来的数
      */
     private static void heapInsert(Integer[] arr, int i) {
+        //兼顾边界0问题
         while(arr[i]>arr[(i-1)/2]){
             swap(arr,i,(i-1)/2);
             i = (i-1)/2;
@@ -331,10 +350,11 @@ public class SortUtil {
 
     /**
      * 堆排序
-     * heapify 如果当前堆中某一个节点i变小了,导致i应该往下边沉
+     * heapify 如果当前堆中某一个节点i变小了,导致i应该往下边沉 即将当前节点和它左右两个孩子中最大的交换
+     * 然后继续和新的左右两个孩子最大值比较 依次重复下去形成新的大根堆
      * @param arr 原始数组
      * @param i 变化的节点
-     * @param heapSize 数组中从0开始到任何一位置heapSize 某一段是堆
+     * @param heapSize 数组中从0开始到任何一位置heapSize-1 某一段是堆即堆的有效区域边界
      */
     private static void heapify(Integer[] arr, int i,int heapSize) {
        int left=i*2+1;

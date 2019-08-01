@@ -6,7 +6,7 @@ import android.util.Log;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/7/12 15:34
- * desc :
+ * desc :非基于比较的排序
  * <p>
  *  桶排序包含:计数排序、基数排序
  *  1，非基于比较的排序，与被排序的样本的实际数据状况很有关系，所以实际中并不经常使用
@@ -48,7 +48,6 @@ public class SortUtil2 {
                 arr[i++]=j;
             }
         }
-
 
     }
 

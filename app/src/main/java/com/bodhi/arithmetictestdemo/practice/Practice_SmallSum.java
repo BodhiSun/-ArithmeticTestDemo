@@ -18,7 +18,7 @@ package com.bodhi.arithmetictestdemo.practice;
  * 逆序对问题 在一个数组中，左边的数如果比右边的数大，则这两个数构成一个逆序对，请打印所有逆序对。
  *
  */
-public class Recursion_SmallSum {
+public class Practice_SmallSum {
 
     public static int smallSum(int[] arr) {
         if (arr == null || arr.length < 2) {
