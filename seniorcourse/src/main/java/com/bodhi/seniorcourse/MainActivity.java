@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
+import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,7 +13,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        testKMP();
+
+    }
+
+    private void testKMP() {
+        System.out.println("------KMP-------");
         KMP_Arithmetic.test();
+        System.out.println("-------------");
         KmpPractice_ShortestHaveTwice.test();
+        System.out.println("-------------");
+        KmpPractice_Tree1SubEqualTree2.test();
     }
 }

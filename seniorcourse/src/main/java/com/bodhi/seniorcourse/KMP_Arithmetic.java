@@ -53,7 +53,7 @@ public class KMP_Arithmetic {
             if (str1[i1] == str2[i2]) {
                 i1++;
                 i2++;
-            } else if (next[i2] == -1) {//没有匹配上时 如果是str2起始位置
+            } else if (next[i2] == -1) {//没有匹配上时 并且如果是str2起始位置
                 i1++;
             } else {
                 //没有匹配上时 如果不是第一个字符 则跳到当前字符的最大前后缀位置
@@ -68,6 +68,11 @@ public class KMP_Arithmetic {
 
     /**
      * 求字符串数组中每个字符前面的最大前缀和最大后缀子串相等的最大值
+     * 思路：首先从左往右依次计算next[i]，当计算next[i]时，next[i-1]已经计算完毕
+     * 当i-1位置最大前后缀的前缀下一个值和i-1位置的数相等时 则next[i]即为next[i-1]+1
+     * 当i-1位置最大前后缀的前缀下一个值和i-1位置的数不等时 则继续判断前缀下一个数的最大前后缀的前缀下一
+     * 个值是否和i-1位置的数相等 想等则为next[i]为next[next[i-1]]+1 不等则继续找前缀的前缀下一个数
+     * 当一直不等并且判断到 next[j]=0时，即相等最大前后缀不存在 则next[i]为0
      *
      * @param str2
      * @return
@@ -104,7 +109,6 @@ public class KMP_Arithmetic {
         String str = "abcabcababaccc";
         String match = "ababa";
         System.out.println(getIndexOf(str, match));
-        System.out.println();
     }
 
 
