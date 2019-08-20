@@ -14,7 +14,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         testKMP();
+        testManacher();
 
+    }
+
+    private void testManacher() {
+        System.out.println("------Manacher-------");
+        Manacher_Arithmetic.test();
     }
 
     private void testKMP() {
