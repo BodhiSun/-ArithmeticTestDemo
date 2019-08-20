@@ -42,8 +42,8 @@ public class KMP_Arithmetic {
             return -1;
         }
 
-        char[] str1 = m.toCharArray();
-        char[] str2 = s.toCharArray();
+        char[] str1 = s.toCharArray();
+        char[] str2 = m.toCharArray();
         int i1 = 0;//str1中当前比较的位置 指针
         int i2 = 0;//str2中当前比较的位置 指针
         int[] next = getNextArray(str2);
@@ -89,7 +89,7 @@ public class KMP_Arithmetic {
             if(str2[i-1]==str2[cn]){
                 next[i++] =++cn;
             }else if(cn>0){
-                //当不满足第一个条件 并且i-1还存在最大前后缀时 cn=i-1位置最大前后缀的最大前后缀然后继续和 str[i-1]比较
+                //当不满足第一个条件 并且i-1还存在最大前后缀时 cn=i-1位置最大前后缀的最大前后缀 然后继续和str[i-1]比较
                 cn=next[cn];
             }else{
                 //当不满足第一个条件 并且i-1不存在最大前后缀或者 i-1位置最大前后缀的最大前后缀不存在 i位置为0
@@ -98,6 +98,13 @@ public class KMP_Arithmetic {
         }
 
         return next;
+    }
+
+    public static void test(){
+        String str = "abcabcababaccc";
+        String match = "ababa";
+        System.out.println(getIndexOf(str, match));
+        System.out.println();
     }
 
 
