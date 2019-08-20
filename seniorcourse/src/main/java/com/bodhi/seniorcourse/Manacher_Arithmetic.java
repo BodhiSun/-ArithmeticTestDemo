@@ -95,6 +95,7 @@ public class Manacher_Arithmetic {
      */
     public static char[] manacherString(String str){
         char[] charArr = str.toCharArray();
+        //处理后的字符串数组总长度
         char[] res = new char[str.length()*2+1];
         int index=0;
         for (int i=0;i!=res.length;i++){

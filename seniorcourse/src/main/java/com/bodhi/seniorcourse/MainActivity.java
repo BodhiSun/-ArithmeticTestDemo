@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
+import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private void testManacher() {
         System.out.println("------Manacher-------");
         Manacher_Arithmetic.test();
+        System.out.println("-------------");
+        ManacherPractice_ShortestEnd.test();
+
     }
 
     private void testKMP() {
