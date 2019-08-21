@@ -1,4 +1,4 @@
-package com.bodhi.seniorcourse.practice;
+package com.bodhi.seniorcourse;
 
 /**
  * @author : Sun
@@ -9,7 +9,7 @@ package com.bodhi.seniorcourse.practice;
  * 思路1：暴力方法 时间复杂度O(n^2)
  * 依次遍历每个字符 然后遍历每个字符的左右两边找到第一个比当前数值大的数
  *
- * 思路2：单调栈结构 时间复杂度O(n)
+ * 思路2：单调栈结构 时间复杂度O(n) 每个数都进栈一次出栈一次
  * 流程：准备一个栈 使之保持从下到上(从底到顶)由大到小的顺序，依次遍历数组中的字符 判断当前栈内是否有数据
  * 如果栈内没有数据直接压栈 如果栈内有数据 将当前字符和栈顶字符比较 如果当前数小于栈顶数据也直接压栈，如果
  * 当前数比栈顶数据大 记录当前数即为栈顶数据的右边最近比它大的值 栈顶下面挨着的数即为栈顶数据的左边最近比它大
@@ -18,12 +18,10 @@ package com.bodhi.seniorcourse.practice;
  * 栈顶数据右边最近比它大的数为空 左边最近比它大的数为他的下面挨着的数 栈底的数据左右两边最近的都为空。
  * 注:如果有两个相等的数挨着 将它的下标叠在一起把它视为一个数一起处理入栈出栈以及左右最近比它大的值
  *
+ *
  */
-public class SingleStackPractice {
+public class SingleStack_Arithmetic {
 
-    public static void getNearLargeNum(int[] arr){
-
-    }
 
 
 
