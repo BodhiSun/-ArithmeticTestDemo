@@ -3,6 +3,7 @@ package com.bodhi.seniorcourse;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.bodhi.seniorcourse.practice.BfprtPractice_MinKNums;
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
@@ -16,7 +17,15 @@ public class MainActivity extends AppCompatActivity {
 
         testKMP();
         testManacher();
+        testBFPRT();
 
+    }
+
+    private void testBFPRT() {
+        System.out.println("------BFPRT-------");
+        BFPRT_Arithmetic.test();
+        System.out.println("-------------");
+        BfprtPractice_MinKNums.test();
     }
 
     private void testManacher() {
