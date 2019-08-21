@@ -7,6 +7,8 @@ import com.bodhi.seniorcourse.practice.BfprtPractice_MinKNums;
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
+import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
+import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,15 @@ public class MainActivity extends AppCompatActivity {
         testKMP();
         testManacher();
         testBFPRT();
+        testWindow();
 
+    }
+
+    private void testWindow() {
+        System.out.println("------Window-------");
+        WindowPractice_SlidWinMaxNumArr.test();
+        System.out.println("-------------");
+        WindowPractice_MinEqualNumSubArr.test();
     }
 
     private void testBFPRT() {
