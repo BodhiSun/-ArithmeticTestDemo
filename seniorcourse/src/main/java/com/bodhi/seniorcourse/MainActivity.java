@@ -8,6 +8,7 @@ import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
+import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private void testSingleStack() {
         System.out.println("------SingleStack-------");
         SingleStackP_MaxRecAreaFromArr.test();
+        System.out.println("-------------");
+        SingleStackP_MaxSubMatrixNum.test();
     }
 
     private void testWindow() {
