@@ -16,6 +16,6 @@ package com.bodhi.seniorcourse.practice;
  *
  *
  */
-public class SingleStack_MaxSubMatrixNum {
+public class SingleStackP_MaxSubMatrixNum {
 
 }

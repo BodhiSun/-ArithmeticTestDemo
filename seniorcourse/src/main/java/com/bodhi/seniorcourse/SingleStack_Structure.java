@@ -20,7 +20,7 @@ package com.bodhi.seniorcourse;
  *
  *
  */
-public class SingleStack_Arithmetic {
+public class SingleStack_Structure {
 
 
 
