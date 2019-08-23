@@ -7,6 +7,7 @@ import com.bodhi.seniorcourse.practice.BfprtPractice_MinKNums;
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
+import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         SingleStackP_MaxRecAreaFromArr.test();
         System.out.println("-------------");
         SingleStackP_MaxSubMatrixNum.test();
+        System.out.println("-------------");
+        SingleStackP_MaxPeakPairNum.test();
     }
 
     private void testWindow() {
