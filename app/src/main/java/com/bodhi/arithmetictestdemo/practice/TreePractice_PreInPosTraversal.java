@@ -9,11 +9,15 @@ import java.util.Stack;
  * @version : 1.0
  * create time : 2019/7/19 17:14
  * desc : 声明二叉树结构，实现二叉树的先序、中序、后序遍历，包括递归方式和非递归 方式
+ * 经典二叉树结构 无论递归还是非递归遍历 额外空间复杂度都是O(h) h为二叉树的高度
+ * 时间复杂度:O(n)
+ *
+ *
  */
 public class TreePractice_PreInPosTraversal {
 
     /**
-     * 声明一个二叉树结构 包括值，左节点，右节点
+     * 声明一个经典二叉树结构 包括值，左节点，右节点
      */
     public static class Node{
         public int value;

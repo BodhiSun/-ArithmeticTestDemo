@@ -10,6 +10,7 @@ import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
+import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
 
@@ -25,7 +26,13 @@ public class MainActivity extends AppCompatActivity {
         testBFPRT();
         testWindow();
         testSingleStack();
+        testMorrisTraversal();
 
+    }
+
+    private void testMorrisTraversal() {
+        System.out.println("------MorrisTraversal-------");
+        TreePractice_MorrisTraversal.test();
     }
 
     private void testSingleStack() {
