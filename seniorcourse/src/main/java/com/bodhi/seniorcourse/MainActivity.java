@@ -10,9 +10,14 @@ import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
+import com.bodhi.seniorcourse.practice.TreePractice_Building_Outline;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
+
+import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         testWindow();
         testSingleStack();
         testMorrisTraversal();
+        testBalanceBinarySearchTree();
+    }
 
+    private void testBalanceBinarySearchTree() {
+        System.out.println("------BalanceBinarySearchTree-------");
+        TreePractice_Building_Outline.test();
     }
 
     private void testMorrisTraversal() {
