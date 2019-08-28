@@ -7,6 +7,7 @@ import com.bodhi.seniorcourse.practice.BfprtPractice_MinKNums;
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
+import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         testSingleStack();
         testMorrisTraversal();
         testBalanceBinarySearchTree();
+        testLongestSumSubArray();
+    }
+
+    private void testLongestSumSubArray() {
+        System.out.println("------累加和最长的子数组-------");
+        Practice_LongestSumSubArray.test();
     }
 
     private void testBalanceBinarySearchTree() {
