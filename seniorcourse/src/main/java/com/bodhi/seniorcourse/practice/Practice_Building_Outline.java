@@ -11,7 +11,7 @@ import java.util.TreeMap;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/8/27 18:31
- * desc :平衡搜索二叉树的应用-大楼边际线问题
+ * desc :大楼边际线问题-平衡搜索二叉树的应用
  *
  * 【题目】
  * 给定一个N行3列二维数组，每一行表示有一座大楼，一共有N座大楼。 所有大楼的底部都坐落在X轴上，每一行的三个
@@ -22,7 +22,7 @@ import java.util.TreeMap;
  * 思路：将一个大楼的起始和终止位置标出 跟踪每个位置最大高度的变化 生成所有轮廓线
  *
  */
-public class TreePractice_Building_Outline {
+public class Practice_Building_Outline {
 
     /**
      * 用来描述楼的边际线

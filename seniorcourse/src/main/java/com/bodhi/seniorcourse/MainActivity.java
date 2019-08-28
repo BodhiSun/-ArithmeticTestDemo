@@ -12,14 +12,11 @@ import com.bodhi.seniorcourse.practice.Practice_MostEorNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
-import com.bodhi.seniorcourse.practice.TreePractice_Building_Outline;
+import com.bodhi.seniorcourse.practice.Practice_Building_Outline;
+import com.bodhi.seniorcourse.practice.TreePractice_MaxAndMinNum;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
-
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         testMorrisTraversal();
         testBalanceBinarySearchTree();
         testLongestSumSubArray();
+        testMaxMinNumOfTree();
+    }
+
+    private void testMaxMinNumOfTree() {
+        System.out.println("------返回二叉树中的最大值和最小值-------");
+        TreePractice_MaxAndMinNum.test();
     }
 
     private void testLongestSumSubArray() {
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void testBalanceBinarySearchTree() {
         System.out.println("------BalanceBinarySearchTree-------");
-        TreePractice_Building_Outline.test();
+        Practice_Building_Outline.test();
     }
 
     private void testMorrisTraversal() {
