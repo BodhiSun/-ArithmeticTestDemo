@@ -4,7 +4,7 @@ package com.bodhi.seniorcourse.practice;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/8/28 15:47
- * desc : 返回二叉树中的最大值和最小值
+ * desc : 树形dp-返回二叉树中的最大值和最小值
  *
  * 思路：以head为头节点的二叉树中 最大值一定来自于左、右、和自己中的最大值，最小值一定来自于左、右、和自己
  * 中的最小值。所以采用递归的方法 逐级往上返回当前节点所在树的最大和最小值

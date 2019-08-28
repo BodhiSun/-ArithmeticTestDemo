@@ -4,7 +4,7 @@ package com.bodhi.seniorcourse.practice;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/8/28 14:30
- * desc :最大搜索二叉子树的大小
+ * desc :树形dp-最大搜索二叉子树的大小
  *
  *【题目】给定一棵二叉树的头节点head,返回最大搜索二叉子树的大小
  *

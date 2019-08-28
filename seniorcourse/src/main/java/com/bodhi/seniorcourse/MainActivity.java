@@ -16,6 +16,7 @@ import com.bodhi.seniorcourse.practice.Practice_Building_Outline;
 import com.bodhi.seniorcourse.practice.TreePractice_LargestSubBS;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxAndMinNum;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxDistance;
+import com.bodhi.seniorcourse.practice.TreePractice_MaxHappy;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
@@ -39,13 +40,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testMaxMinNumOfTree() {
-        System.out.println("------高度解答套路三部曲-------");
+        System.out.println("------高度解答套路的树形dp四部曲-------");
         System.out.println("--1.返回二叉树中的最大值和最小值-------");
         TreePractice_MaxAndMinNum.test();
         System.out.println("--2.最大搜索二叉子树的大小-------");
         TreePractice_LargestSubBS.test();
         System.out.println("--3.二叉树中最大距离-------");
         TreePractice_MaxDistance.test();
+        System.out.println("--4.公司参加晚会的最大活跃指数-------");
+        TreePractice_MaxHappy.test();
     }
 
     private void testLongestSumSubArray() {

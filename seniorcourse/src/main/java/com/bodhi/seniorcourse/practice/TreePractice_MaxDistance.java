@@ -4,7 +4,7 @@ package com.bodhi.seniorcourse.practice;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/8/28 17:31
- * desc :二叉树上的最大距离
+ * desc :树形dp-二叉树上的最大距离
  *
  * 【题目】
  * 二叉树中，一个节点可以往上走和往下走，给定一棵二叉树的头节点head，请返回这棵二叉树上的最大距离。
