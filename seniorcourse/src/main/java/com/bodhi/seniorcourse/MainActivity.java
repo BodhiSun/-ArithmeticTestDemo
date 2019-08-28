@@ -13,6 +13,7 @@ import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxSubMatrixNum;
 import com.bodhi.seniorcourse.practice.Practice_Building_Outline;
+import com.bodhi.seniorcourse.practice.TreePractice_LargestSubBS;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxAndMinNum;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
@@ -34,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         testBalanceBinarySearchTree();
         testLongestSumSubArray();
         testMaxMinNumOfTree();
+        testLargestSubBs();
+    }
+
+    private void testLargestSubBs() {
+        System.out.println("------最大搜索二叉子树的大小-------");
+        TreePractice_LargestSubBS.test();
     }
 
     private void testMaxMinNumOfTree() {
