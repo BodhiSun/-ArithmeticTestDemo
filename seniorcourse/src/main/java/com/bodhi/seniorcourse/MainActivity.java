@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         testLongestSumSubArray();
         testMaxMinNumOfTree();
         testLruCache();
+        testLfuCache();
+    }
+
+    private void testLfuCache() {
+        System.out.println("------LfuCache-------");
+        LfuCache_Structure.test();
     }
 
     private void testLruCache() {
