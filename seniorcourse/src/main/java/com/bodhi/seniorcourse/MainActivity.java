@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         testBalanceBinarySearchTree();
         testLongestSumSubArray();
         testMaxMinNumOfTree();
+        testLruCache();
+    }
+
+    private void testLruCache() {
+        System.out.println("------LruCache-------");
+        LruCache_Structure.test();
     }
 
     private void testMaxMinNumOfTree() {
