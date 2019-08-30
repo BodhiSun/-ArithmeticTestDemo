@@ -7,6 +7,7 @@ import com.bodhi.seniorcourse.practice.BfprtPractice_MinKNums;
 import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
+import com.bodhi.seniorcourse.practice.Practice_FormulaCompute;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray;
 import com.bodhi.seniorcourse.practice.Practice_MostEorNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         testMaxMinNumOfTree();
         testLruCache();
         testLfuCache();
+        testFormulaCompute();
+    }
+
+    private void testFormulaCompute() {
+        System.out.println("------字符串公式的计算结果-----");
+        Practice_FormulaCompute.test();
     }
 
     private void testLfuCache() {
