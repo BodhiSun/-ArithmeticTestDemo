@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         testLruCache();
         testLfuCache();
         testFormulaCompute();
+        testSkipListStructure();
+    }
+
+    private void testSkipListStructure() {
+        System.out.println("------跳表结构-----");
+        SkipList_Structure.test();
     }
 
     private void testFormulaCompute() {
