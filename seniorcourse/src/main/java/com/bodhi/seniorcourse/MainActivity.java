@@ -9,6 +9,7 @@ import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.Practice_FormulaCompute;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray;
+import com.bodhi.seniorcourse.practice.Practice_MaxEORSum;
 import com.bodhi.seniorcourse.practice.Practice_MostEorNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxRecAreaFromArr;
@@ -42,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         testLfuCache();
         testFormulaCompute();
         testSkipListStructure();
+        testMaxEorSum();
+    }
+
+    private void testMaxEorSum() {
+        System.out.println("-----数组最大异或和-----");
+        Practice_MaxEORSum.test();
     }
 
     private void testSkipListStructure() {
