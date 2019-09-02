@@ -4,7 +4,7 @@ package com.bodhi.arithmetictestdemo.practice;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/7/30 14:12
-     * desc :暴力递归到动态规划(DP) 求二维数组最小路径
+ * desc :暴力递归到动态规划(DP) 求数组中任意组合得到指定值
  *
  * 【题目】给你一个数组arr，和一个整数aim。如果可以任意选择arr中的数字，能不能累加得到aim，返回true或
  * 者false。arr和aim都是正数

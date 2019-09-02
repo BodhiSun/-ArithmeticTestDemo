@@ -80,7 +80,7 @@ public class SkipList_Structure {
                 int levelAll =maxLevel;//从最高层向下开始遍历
                 do {
                     //找到levelAll层上小于newValue的最大节点
-                    current = findNext(newValue,current,levelAll);
+                    current = findMaxLess(newValue,current,levelAll);
                     //从上倒下开始查找 当遍历到level时准备插入节点 并前后连接上
                     if(levelAll<=level){
                         //将新节点的第0层下个节点指向 current节点level层的下个节点,因为每次都是往0层插入
@@ -96,7 +96,7 @@ public class SkipList_Structure {
         }
 
         /**
-         * 删除跳表中指定的值(有问题)
+         * 删除跳表中指定的值
          * @param deleteValue
          */
         public void delete(Integer deleteValue){
@@ -111,9 +111,11 @@ public class SkipList_Structure {
                 SkipListNode current = head;
                 do{
                     //找到小于要删除节点的最大节点
-                    current = findNext(deleteNode.value, current, level);
+                    current = findMaxLess(deleteNode.value, current, level);
+
                     //当要删除的节点下一个节点层级大于当前节点时 才将前后节点重连
                     if (deleteNode.nextNodes.size() > level) {
+//                        SkipListNode node = current.nextNodes.get(level);
                         current.nextNodes.set(level, deleteNode.nextNodes.get(level));
                     }
                 } while (level-- > 0);
@@ -130,7 +132,7 @@ public class SkipList_Structure {
         }
 
         /**
-         * 返回跳表中最大的小于等于给定值e的节点
+         * 返回跳表中最大小于等于给定值的节点
          * @param e
          * @return
          */
@@ -139,7 +141,7 @@ public class SkipList_Structure {
         }
 
         /**
-         * 返回跳表中给定 开始节点和层级 后的 最大的小于等于给定值e的节点
+         * 返回跳表中给定 开始节点和层级后的 最大的小于等于给定值e的节点
          * @param e
          * @param current
          * @param level
@@ -147,10 +149,35 @@ public class SkipList_Structure {
          */
         private SkipListNode find(Integer e, SkipListNode current, int level) {
             do {
-                current = findNext(e, current, level);
-            } while (level-- > 0);
+                current = findLessOrEquals(e, current, level);
+            } while (level-- > 0);//level--指针向下移动
             return current;
         }
+
+        /**
+         * 返回在给定的开始节点的level层级中 右边最大的小于等于给定值e的 level层节点
+         * @param e
+         * @param current 当前节点值一定小于e
+         * @param level 给定的层级
+         * @return
+         */
+        private SkipListNode findLessOrEquals(Integer e, SkipListNode current, int level) {
+            //当前节点第level层的下一个节点
+            SkipListNode next = current.nextNodes.get(level);
+            while (next != null) {
+                //当前节点第level层的下一个节点值
+                Integer value = next.value;
+                //当前节点的下一个节点值大于给定值则 当前节点在level层上一定小于或等于给定值
+                if (lessThan(e, value)) {
+                    break;
+                }
+                //否则跳到本层上对应的下一个节点继续比较 指针向右移动
+                current = next;
+                next = current.nextNodes.get(level);
+            }
+            return current;
+        }
+
 
         /**
          * 返回在给定的开始节点的level层级中 右边最大的小于给定值e的 level层节点
@@ -159,17 +186,17 @@ public class SkipList_Structure {
          * @param level 给定的层级
          * @return
          */
-        private SkipListNode findNext(Integer e, SkipListNode current, int level) {
+        private SkipListNode findMaxLess(Integer e, SkipListNode current, int level) {
             //当前节点第level层的下一个节点
             SkipListNode next = current.nextNodes.get(level);
             while (next != null) {
                 //当前节点第level层的下一个节点值
                 Integer value = next.value;
-                //如果在level层上当前节点的下一个节点值大于给定值则 当前节点就是在level层上要找的节点
-                if (lessThan(e, value)) {
+                //下一个节点值大于或等于给定值则 当前节点一定小于给定值就是在level层上要找的节点
+                if (equalTo(e, value)||lessThan(e, value)) {
                     break;
                 }
-                //否则跳到本层上对应的下一个节点继续比较
+                //否则跳到本层上对应的下一个节点继续比较 指针向右移动
                 current = next;
                 next = current.nextNodes.get(level);
             }
@@ -179,6 +206,7 @@ public class SkipList_Structure {
         public int size() {
             return size;
         }
+
 
         /**
          * 查找当前跳表是否包含指定数
@@ -235,23 +263,34 @@ public class SkipList_Structure {
 
     public static void test(){
         SkipList skipList = new SkipList();
-        skipList.add(10);
         skipList.add(2);
-        skipList.add(16);
-        skipList.add(58);
-
-//        Iterator<Integer> iterator = skipList.iterator();
-//        while (iterator.hasNext()){
-//            System.out.print(iterator.next()+",");
-//        }
-//        System.out.println();
-
-        skipList.delete(16);
-        skipList.delete(100);
+        skipList.add(5);
+        skipList.add(6);
+        skipList.add(12);
+        skipList.add(15);
 
         Iterator<Integer> iterator = skipList.iterator();
         while (iterator.hasNext()){
             System.out.print(iterator.next()+",");
+        }
+        System.out.println();
+
+        skipList.delete(5);
+        skipList.delete(12);
+
+        Iterator<Integer> iterator2 = skipList.iterator();
+        while (iterator2.hasNext()){
+            System.out.print(iterator2.next()+",");
+        }
+        System.out.println();
+
+        skipList.add(20);
+        skipList.add(5);
+        skipList.add(6);
+
+        Iterator<Integer> iterator3 = skipList.iterator();
+        while (iterator3.hasNext()){
+            System.out.print(iterator3.next()+",");
         }
         System.out.println();
 
