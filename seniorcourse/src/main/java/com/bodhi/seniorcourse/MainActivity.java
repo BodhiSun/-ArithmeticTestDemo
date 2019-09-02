@@ -20,6 +20,9 @@ import com.bodhi.seniorcourse.practice.TreePractice_MaxAndMinNum;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxDistance;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxHappy;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
+import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_PokerGame;
+import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_RobotWalk;
+import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_TransMoney;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
 import com.bodhi.seniorcourse.practice.WindowPractice_SlidWinMaxNumArr;
 
@@ -44,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
         testFormulaCompute();
         testSkipListStructure();
         testMaxEorSum();
+        testTransMoneyNum();
+    }
+
+    private void testTransMoneyNum() {
+        System.out.println("------高度解答套路的暴力递归到动态规划-------");
+        System.out.println("-----换钱的方法数-----");
+        ViolenceRecursiveDP_TransMoney.test();
+        System.out.println("-----纸牌获得最大分数-----");
+        ViolenceRecursiveDP_PokerGame.test();
+        System.out.println("-----机器人多少个路径-----");
+        ViolenceRecursiveDP_RobotWalk.test();
     }
 
     private void testMaxEorSum() {
