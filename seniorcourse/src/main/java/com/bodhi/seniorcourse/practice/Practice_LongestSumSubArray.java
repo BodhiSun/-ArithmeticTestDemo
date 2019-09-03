@@ -6,7 +6,7 @@ import java.util.HashMap;
  * @author : Sun
  * @version : 1.0
  * create time : 2019/8/28 10:42
- * desc :累加和最长子数组
+ * desc :累加和最长子数组-哈希表
  *
  * 【题目】
  * 给定一个数组arr（有0、正、负），和一个整数aim，求在arr中，累加和等于aim的最长子数组的长度
