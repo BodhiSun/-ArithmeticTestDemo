@@ -10,6 +10,7 @@ import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.Practice_FormulaCompute;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray2;
+import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray3;
 import com.bodhi.seniorcourse.practice.Practice_MaxEORSum;
 import com.bodhi.seniorcourse.practice.Practice_MostEorNum;
 import com.bodhi.seniorcourse.practice.SingleStackP_MaxPeakPairNum;
@@ -104,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         Practice_MostEorNum.test();
         System.out.println("------累加和最长的子数组-只有正数-----");
         Practice_LongestSumSubArray2.test();
+        System.out.println("------累加和小于等于最长子数组-----");
+        Practice_LongestSumSubArray3.test();
     }
 
     private void testBalanceBinarySearchTree() {
