@@ -24,6 +24,7 @@ import com.bodhi.seniorcourse.practice.TreePractice_MaxDistance;
 import com.bodhi.seniorcourse.practice.TreePractice_MaxHappy;
 import com.bodhi.seniorcourse.practice.TreePractice_MorrisTraversal;
 import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_PokerGame;
+import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_RegularMatch;
 import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_RobotWalk;
 import com.bodhi.seniorcourse.practice.ViolenceRecursiveDP_TransMoney;
 import com.bodhi.seniorcourse.practice.WindowPractice_MinEqualNumSubArr;
@@ -52,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         testMaxEorSum();
         testTransMoneyNum();
         testJosephusProblem();
+        testRegularMatch();
+    }
+
+    private void testRegularMatch() {
+        System.out.println("-----VR->DP 字符串正则匹配问题-----");
+        ViolenceRecursiveDP_RegularMatch.test();
     }
 
     private void testJosephusProblem() {
