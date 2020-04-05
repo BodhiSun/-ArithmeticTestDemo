@@ -215,7 +215,7 @@ public class LfuCache_Structure {
             if(nodeList.isEmpty()){
                 //如果当前节点为大链表的头结点时
                 if(headList==nodeList){
-                    headList = headList.next;
+                    headList = nodeList.next;
                     if(headList!=null){
                         headList.last=null;
                     }
@@ -258,7 +258,7 @@ public class LfuCache_Structure {
                 heads.put(node,newList);
             }else{
                 //即将移动到的节点不是大链表中最高的词频 则判断词频然后插入或新建
-                if(nextList.head.times.equals(nextList.tail)){
+                if(nextList.head.times.equals(node.times)){
                     nextList.addNodeFromHead(node);
                     heads.put(node,nextList);
                 }else{
@@ -269,7 +269,7 @@ public class LfuCache_Structure {
                     }
                     newList.last=preList;
                     newList.next =nextList;
-                    newList.last=newList;
+                    nextList.last=newList;
 
                     if(headList==nextList){
                         headList=newList;
@@ -282,15 +282,17 @@ public class LfuCache_Structure {
     }
 
     public static void test(){
-        LFUCache testCache = new LFUCache(3);
-        testCache.set(1, 11);
-        testCache.set(2, 22);
-        testCache.set(3, 33);
-        System.out.println(testCache.get(2));
+        LFUCache testCache = new LFUCache(2);
+        testCache.set(1, 1);
+        testCache.set(2, 2);
         System.out.println(testCache.get(1));
-        testCache.set(4, 44);
-        System.out.println(testCache.get(4));
+        testCache.set(3, 3);
+        System.out.println(testCache.get(2));
         System.out.println(testCache.get(3));
+        testCache.set(4, 4);
+        System.out.println(testCache.get(1));
+        System.out.println(testCache.get(3));
+        System.out.println(testCache.get(4));
     }
 
 }
