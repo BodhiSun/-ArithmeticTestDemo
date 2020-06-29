@@ -59,14 +59,69 @@
 6. [搜索二叉树](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/BinarySearchTree_Structure.java)
 7. [平衡搜索二叉树](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/BalanceBinarySearchTree_Structure.java)
 8. [布隆过滤器](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/BloomFilter.java)
+9. [哈希表](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HashPractice_HashFunctionHashTable.java)
+10. [一致性哈希](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HashPractice_SameHash.java)
+11. [查集结构](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HashPractice_UnionFind.java)
+12. [前缀树](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_TrieTree.java)
 
 ##### 3.练习题
-1. KMP练习：一个字符串只能在后面添加字符变成一个大的字符串 要求添加最少的字符 使之大字符串变成包含两个原始串
-2. KMP练习：有两棵树T1，T2,求T1中某一颗子树是否包含T2
-3. 跳表结构
-4. LRU缓存结构
-5. LFU缓存结构
-6. 搜索二叉树
-7. 平衡搜索二叉树
+###### 1.堆栈练习
+1. 用数组结构实现大小固定的队列和栈[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HeapPractice_ArrayToStackAndQueue.java)
+2. 实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返 回栈中最小元素的操作。[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HeapPractice_GetMinStack.java)
+3. 如何仅用队列结构实现栈结构？如何仅用栈结构实现队列结构？[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HeapPractice_StackAndQueueConvert.java)
+
+###### 2.队列练习
+1. 提供一个宠物类，猫类和狗类 要实现一个队列结构 单独取所有的猫或所有的狗，或按猫狗先后顺序依次取出[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/QueuePractice_DogCatQueue.java)
+
+###### 3.矩阵练习
+1. 在行列都排好序的矩阵中找数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/MatrixPractice_FindNum.java)
+2. 旋转正方形矩阵[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/MatrixPractice_RotateMatrix.java)
+3. 转圈打印矩阵[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/MatrixPractice_RotatePrint.java)
+4. “之”字形打印矩阵[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/MatrixPractice_ZigZagPrintMatrix.java)
+5. 岛问题[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/MatrixPractice_Islands.java)
+
+###### 4.链表练习
+1. 复制含有随机指针节点的链表[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_CopyListWithRandom.java)
+2. 两个单链表相交的一系列问题[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_FindFirstIntersectNode.java)
+3. 判断一个链表是否为回文结构[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_isPalindrome.java)
+4. 打印两个有序链表的公共部分[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_PrintCommonPart.java)
+5. 反转单向和双向链表[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_ReverseList.java)
+6. 将单向链表按某值划分成左边小、中间相等、右边大的形式[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_SmallerEqualBigger.java)
+
+###### 5.二叉树练习
+1. 实现二叉树的先序、中序、后序遍历，包括递归方式和非递归方式[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_PreInPosTraversal.java)
+2. 已知一棵完全二叉树，求其节点的个数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_CompleteTreeNodeNumber.java)
+3. 判断一棵二叉树是否是平衡二叉树[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_IsBalancedTree.java)
+4. 判断一棵树是否是搜索二叉树、判断一棵树是否是完全二叉树[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_IsBSTAndCBT.java)
+5. 直观的打印一颗二叉树(空间感还原的打印方式)[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_PrintBinaryTree.java)
+6. 二叉树的序列化和反序列化[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_SerializeAndDeserialize.java)
+7. 在二叉树中找到一个节点的后继节点[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_SuccessorNode.java)
+8. 前缀树[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_TrieTree.java)
+
+###### 6.哈希练习
+1. 设计RandomPool随机池结构[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HashPractice_RandomPool.java)
+
+###### 7.贪心练习
+1. 最小字典序[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/GreedyPractice_LowestLexicography.java)
+2. 切金条用最小的费用 哈夫曼编码[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/GreedyPractice_GoldBarLessCost.java)
+3. 实安排会议的场次最多[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/GreedyPractice_MoreMeetingArrange.java)
+4. 项目达到最大收益IPO[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/GreedyPractice_ProjectMoreMoney.java)
+
+###### 8.暴力递归
+1. n!求n的阶乘 即1*2*3*...*n[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursive_Factorial.java)
+2. 汉诺塔问题 总步数为2^n - 1[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursive_Hanoi.java)
+3. 打印一个字符串的全部子序列，包括空字符串[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursive_PrintAllSubsquence.java)
+4. 打印一个字符串的全部排列[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursive_PrintAllPermutation.java)
+5. 母牛生小牛求牛的总数量[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursive_Cow.java)
+
+###### 9.动态规划
+1. 求二维数组最小路径[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursiveDP_MinPath.java)
+2. 求数组中任意组合得到指定值[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursiveDP_AddToEqualAim.java)
+
+###### 10.动态规划
+1. 提供一个宠物类，猫类和狗类 要实现一个队列结构 单独取所有的猫或所有的狗，或按猫狗先后顺序依次取出
+2. 实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返 回栈中最小元素的操作。
+3. 如何仅用队列结构实现栈结构？如何仅用栈结构实现队列结构
+
 
 4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
