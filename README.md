@@ -132,7 +132,7 @@
 1. Kmp练习:一个字符串只能在后面添加字符变成一个大的字符串 要求添加最少的字符 使之大字符串变成包含两个原始串[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/KmpPractice_ShortestHaveTwice.java)
 2. Kmp练习:有两棵树T1，T2,求T1中某一颗子树是否包含T2[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/KmpPractice_Tree1SubEqualTree2.java)
 3. Manacher练习:给定一个字符串 只能向后面添加字符 要求添加最短的字符使之成为回文串[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/ManacherPractice_ShortestEnd.java)
-4. Bfprt练习:在一个无序数组中找出前K小的数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/BFPRT_Arithmetic.java)
+4. Bfprt练习:在一个无序数组中找出前K小的数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/BfprtPractice_MinKNums.java)
 5. 滑动窗口练习:最大值减去最小值小于或等于num的子数组数量[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/WindowPractice_MinEqualNumSubArr.java)
 6. 滑动窗口练习:生成滑动窗口最大值数组[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/WindowPractice_SlidWinMaxNumArr.java)
 7. 单调栈练习:求数组代表的环形山中能相互看见的山最多有多少对[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/practice/SingleStackP_MaxPeakPairNum.java)
