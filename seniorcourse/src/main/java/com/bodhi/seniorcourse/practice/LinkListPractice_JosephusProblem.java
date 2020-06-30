@@ -28,7 +28,7 @@ package com.bodhi.seniorcourse.practice;
  *
  *
  */
-public class Practice_JosephusProblem {
+public class LinkListPractice_JosephusProblem {
 
     public static class Node {
         public int value;

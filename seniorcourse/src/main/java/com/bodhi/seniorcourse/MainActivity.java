@@ -8,7 +8,7 @@ import com.bodhi.seniorcourse.practice.KmpPractice_ShortestHaveTwice;
 import com.bodhi.seniorcourse.practice.KmpPractice_Tree1SubEqualTree2;
 import com.bodhi.seniorcourse.practice.ManacherPractice_ShortestEnd;
 import com.bodhi.seniorcourse.practice.Practice_FormulaCompute;
-import com.bodhi.seniorcourse.practice.Practice_JosephusProblem;
+import com.bodhi.seniorcourse.practice.LinkListPractice_JosephusProblem;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray2;
 import com.bodhi.seniorcourse.practice.Practice_LongestSumSubArray3;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void testJosephusProblem() {
         System.out.println("-----环形单链表的约瑟夫问题-----");
-        Practice_JosephusProblem.test();
+        LinkListPractice_JosephusProblem.test();
     }
 
     private void testTransMoneyNum() {

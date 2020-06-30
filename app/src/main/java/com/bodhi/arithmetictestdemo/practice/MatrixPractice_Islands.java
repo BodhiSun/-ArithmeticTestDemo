@@ -16,7 +16,7 @@ package com.bodhi.arithmetictestdemo.practice;
  * 合并边界的处理采用并查集结构 处理减还是合并
  *
  */
-public class HashPractice_Islands {
+public class MatrixPractice_Islands {
 
     public static int countIslands(int[][] m){
         if(m==null||m[0]==null){

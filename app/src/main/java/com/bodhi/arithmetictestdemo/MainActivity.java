@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //        testQuickSort();
 //        testHeapSort();
 //        testBucketSort();
-        Practice_MaxGap.test();
+//        Practice_MaxGap.test();
 
 //        testRotatePrintMatrix();
 //        testRotateMatrix();
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 //            testViolenceRecursiveFactorial();
 //          testHanoi();
 //         testPrintAllSubsquence();
-//         testPrintAllPermutation();
+         testPrintAllPermutation();
 //            testCowNum();
 //            testMinPath();
 //            testAddToEqual();
