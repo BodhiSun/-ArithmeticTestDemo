@@ -87,6 +87,7 @@
 4. 打印两个有序链表的公共部分[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_PrintCommonPart.java)
 5. 反转单向和双向链表[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_ReverseList.java)
 6. 将单向链表按某值划分成左边小、中间相等、右边大的形式[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/LinkListPractice_SmallerEqualBigger.java)
+7. 环形单链表的约瑟夫问题(经典题目 难度很高 尽量理解)[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/LinkListPractice_JosephusProblem.java)
 
 ###### 5.二叉树练习
 1. 实现二叉树的先序、中序、后序遍历，包括递归方式和非递归方式[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_PreInPosTraversal.java)
@@ -97,6 +98,11 @@
 6. 二叉树的序列化和反序列化[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_SerializeAndDeserialize.java)
 7. 在二叉树中找到一个节点的后继节点[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_SuccessorNode.java)
 8. 前缀树[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/TreePractice_TrieTree.java)
+9. 最大搜索二叉子树的大小[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/TreePractice_LargestSubBS.java)
+10. 返回二叉树中的最大值和最小值[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/TreePractice_MaxAndMinNum.java)
+11. 二叉树上的最大距离[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/TreePractice_MaxDistance.java)
+12. 公司参加晚会的最大活跃指数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/TreePractice_MaxHappy.java)
+13. 二叉树-Morris遍历[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/TreePractice_MorrisTraversal.java)
 
 ###### 6.哈希练习
 1. 设计RandomPool随机池结构[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/HashPractice_RandomPool.java)
@@ -117,11 +123,28 @@
 ###### 9.动态规划
 1. 求二维数组最小路径[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursiveDP_MinPath.java)
 2. 求数组中任意组合得到指定值[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/app/src/main/java/com/bodhi/arithmetictestdemo/practice/ViolenceRecursiveDP_AddToEqualAim.java)
+3. 排成一条线的纸牌博弈问题[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/ViolenceRecursiveDP_PokerGame.java)
+4. 字符串正则匹配问题(难度很高)[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/ViolenceRecursiveDP_RegularMatch.java)
+5. 机器人多少个路径[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/ViolenceRecursiveDP_RobotWalk.java)
+6. 换钱的方法数[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/ViolenceRecursiveDP_TransMoney.java)
 
-###### 10.动态规划
-1. 提供一个宠物类，猫类和狗类 要实现一个队列结构 单独取所有的猫或所有的狗，或按猫狗先后顺序依次取出
-2. 实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返 回栈中最小元素的操作。
-3. 如何仅用队列结构实现栈结构？如何仅用栈结构实现队列结构
+###### 10.经典算法和数据结构练习
+1. [Kmp练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/KmpPractice_ShortestHaveTwice.java):一个字符串只能在后面添加字符变成一个大的字符串 要求添加最少的字符 使之大字符串变成包含两个原始串
+2. [Kmp练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/KmpPractice_Tree1SubEqualTree2.java):有两棵树T1，T2,求T1中某一颗子树是否包含T2
+3. [Manacher练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/ManacherPractice_ShortestEnd.java)：给定一个字符串 只能向后面添加字符 要求添加最短的字符使之成为回文串
+4. [Bfprt练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/BFPRT_Arithmetic.java)：在一个无序数组中找出前K小的数
+5. [滑动窗口练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/WindowPractice_MinEqualNumSubArr.java)：最大值减去最小值小于或等于num的子数组数量
+6. [滑动窗口练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/WindowPractice_SlidWinMaxNumArr.java)：生成滑动窗口最大值数组
+7. [单调栈练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/SingleStackP_MaxPeakPairNum.java)：求数组代表的环形山中能相互看见的山最多有多少对
+8. [单调栈练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/SingleStackP_MaxRecAreaFromArr.java)：求数组代表的直方图中最大子矩形面积大小
+9. [单调栈练习](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/SingleStackP_MaxSubMatrixNum.java)：求二维数组最大子矩阵大小
 
+###### 11.字符串数组练习
+1. 大楼边际线问题[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_Building_Outline.java)
+2. 给定一个字符串公式返回计算结果[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_FormulaCompute.java)
+3. 给定一个数组arr（有0、正、负），和一个整数aim，求在arr中，累加和等于aim的最长子数组的长度[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_LongestSumSubArray.java)
+4. 给定一个数组arr，注意全是正数；一个整数aim，求累加和等于aim的，最长子数组[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_LongestSumSubArray2.java)
+5. 给定一个数组arr，值可正，可负，可0；一个整数aim，求累加和小于等于aim的，最长子数组[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_LongestSumSubArray3.java)
+6. 数组最大异或和[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_MaxEORSum.java)
+7. 最多异或和为0的子数组[Go](https://github.com/BodhiSun/ArithmeticTestDemo/blob/master/seniorcourse/src/main/java/com/bodhi/seniorcourse/Practice_MostEorNum.java)
 
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
